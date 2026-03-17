@@ -1,0 +1,24 @@
+#!/bin/bash
+# Privileged helper for spacemouse-ctl - runs via pkexec
+
+case "$1" in
+    start-vh)
+        systemctl start virtualhere-spacemouse
+        ;;
+    stop-vh)
+        systemctl stop virtualhere-spacemouse
+        ;;
+    start-spnav)
+        systemctl start spacenavd
+        ;;
+    stop-spnav)
+        systemctl stop spacenavd
+        ;;
+    udev-trigger)
+        udevadm trigger --attr-match=idVendor=256f --attr-match=idProduct=c635
+        ;;
+    *)
+        echo "Invalid command"
+        exit 1
+        ;;
+esac

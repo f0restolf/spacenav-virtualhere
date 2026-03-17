@@ -1,0 +1,39 @@
+[Unit]
+Description=VirtualHere USB Server (Sandboxed SpaceMouse)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/opt/virtualhere/vhusbdx86_64 -c /etc/virtualhere/config.ini -b
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=5
+
+# Filesystem protection
+ProtectHome=yes
+ProtectSystem=strict
+ReadWritePaths=/etc/virtualhere /tmp
+PrivateTmp=yes
+
+# Kernel protection
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectKernelLogs=yes
+ProtectControlGroups=yes
+
+# Additional hardening
+NoNewPrivileges=yes
+RestrictRealtime=yes
+LockPersonality=yes
+ProtectClock=yes
+ProtectHostname=yes
+RestrictSUIDSGID=yes
+SystemCallArchitectures=native
+
+# Resource limits
+MemoryMax=256M
+CPUQuota=50%
+
+[Install]
+WantedBy=multi-user.target
