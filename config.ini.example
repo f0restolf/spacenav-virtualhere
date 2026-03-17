@@ -1,0 +1,9 @@
+ServerName=SpaceMouse-Server
+SSLCert=/etc/virtualhere/certs/server.pem
+SSLCAFile=/etc/virtualhere/certs/ca.crt
+SSLUseClientCerts=1
+SSLReverseClients=YOUR_WINDOWS_VM_IP:7572
+ReverseClientsRetryPeriod=15
+AllowedDevices=256f/c635
+AutoFindTimeout=0
+LogFile=/tmp/virtualhere.log

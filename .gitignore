@@ -1,0 +1,12 @@
+# VirtualHere binary (download separately, proprietary)
+vhusbdx86_64
+
+# Actual config with secrets
+config.ini
+
+# Certificates (generate locally)
+*.pem
+*.key
+*.crt
+*.csr
+*.srl
