@@ -119,3 +119,7 @@ Tray icon: left-click cycles modes, right-click for menu.
 | `/usr/local/bin/spacemouse-ctl-root` | Privileged helper |
 | `/usr/share/polkit-1/actions/org.spacemouse.ctl.policy` | Polkit auth policy |
 | `~/.local/bin/spacemouse-tray.py` | System tray app |
+
+## Acknowledgments
+
+This project was developed with assistance from Claude (Anthropic).
